@@ -27,7 +27,7 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) {
         CreateStudentDto createStudentDto = new CreateStudentDto();
         createStudentDto.setName(req.getParameter("name"));
         createStudentDto.setEmail(req.getParameter("email"));
