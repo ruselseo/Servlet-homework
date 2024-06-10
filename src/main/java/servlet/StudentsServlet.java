@@ -28,9 +28,9 @@ public class StudentsServlet extends HttpServlet {
             try {
                 studentService.findAllByGroupId(groupId).forEach(studentDto -> printWriter.write("""
                         <li>
-                            %s%s%s
+                           <a href="/students?groupId=%d">%s%s%s</a>
                         </li>
-                        """.formatted(studentDto.getName(),"  Email: ", studentDto.getEmail())));
+                        """.formatted(groupId, studentDto.getName(),"  Email: ", studentDto.getEmail())));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
